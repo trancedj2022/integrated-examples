@@ -1,0 +1,31 @@
+//删除禁用 BT 配置方法
+//1、在 inbounds 中找到各应用的如下：
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ]
+      }
+//注意：
+//1)、此配置为流量探测配置（辅助），仅各应用配置了才起作用（单项）。
+//2)、删除此配置后需删除上面大括号后的逗号。
+
+//2、在 routing 中找到如下：
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "block"
+      }
+//注意：此配置为禁用 BT 配置（全局），只有所有应用不使用禁用 BT 才需要删除。
+
+//3、在 outbounds 中找到如下：
+    {
+      "tag": "block",
+      "protocol": "blackhole",
+      "settings": {}
+    }
+//注意：此配置为规则处理配置（辅助），只有无其它配置关联此配置才需要删除。

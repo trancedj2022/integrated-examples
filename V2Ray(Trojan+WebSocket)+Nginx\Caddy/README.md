@@ -19,4 +19,4 @@
 
 5、配置1：使用 Local Loopback 连接。配置2：使用 UDS 连接。
 
-6、本示例兼容原版 Trojan-Go 的服务端 WebSocket 应用，即可使用 Trojan-Go 客户端连接（多路复用不能启用，不兼容。）。
+6、本示例兼容 Trojan-Go 的服务端中 WebSocket 核心应用，即可使用 Trojan-Go 客户端连接；但 WebSocket 的多路复用不兼容、不能启用，因此不推荐使用。

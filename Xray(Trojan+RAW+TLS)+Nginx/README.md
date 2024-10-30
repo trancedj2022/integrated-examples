@@ -5,7 +5,7 @@
 原理：
 
 默认流程：Xray client <------ RAW+TLS（HTTP/2或HTTPS） ------> Xray server  
-回落流程：WEB client <------------- HTTP/2或HTTPS --------------> Xray server <-- H2C或HTTP/1.1 --> Nginx（WEB server）
+回落流程：WEB client <-------------- HTTP/2或HTTPS --------------> Xray server <-- H2C或HTTP/1.1 --> Nginx（WEB server）
 
 注意：
 
@@ -19,4 +19,4 @@
 
 5、配置1：使用 Local Loopback 连接，且启用了 PROXY protocol。配置2：使用 UDS 连接，且启用了 PROXY protocol。
 
-6、本示例兼容原版 Trojan 的服务端应用，即可使用 Trojan 或 Trojan-Go 客户端连接。
+6、本示例兼容原版 Trojan 的服务端应用，即可使用原版 Trojan 客户端连接；但原版 Trojan 客户端不支持指纹伪造，因此不推荐使用。
